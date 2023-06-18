@@ -10,6 +10,10 @@ import javafx.scene.text.Text;
 public class CalculatorController {
     @FXML
     private Button binary;
+    @FXML
+    private Button octal;
+    @FXML
+    private Button hexadecimal;
 
     @FXML
     private TextField inputNumber;
@@ -22,5 +26,16 @@ public class CalculatorController {
 
         String binaryNumber = Integer.toBinaryString(Integer.parseInt(inputNumber.getText()));
         message.setText(binaryNumber);
+    }
+    @FXML
+    void convertH(ActionEvent event) {
+        String hexNumber = Integer.toHexString(Integer.parseInt(inputNumber.getText()));
+        message.setText(hexNumber);
+    }
+
+    @FXML
+    void convertO(ActionEvent event) {
+        String octalNumber = Integer.toOctalString(Integer.parseInt(inputNumber.getText()));
+        message.setText(octalNumber);
     }
 }
