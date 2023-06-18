@@ -48,9 +48,15 @@ public class CalculatorController {
     }
 
 
-    public void nextWindow(ActionEvent actionEvent) throws IOException {
+    @FXML
+    void nextWindow(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("newScene.fxml")));
         Calculator.primaryStage.setScene(new Scene(root, 320, 240));
         Calculator.primaryStage.show();
+    }
+
+    @FXML
+    void closeWindow(ActionEvent event) {
+        Calculator.primaryStage.close();
     }
 }
