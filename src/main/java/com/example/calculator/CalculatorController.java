@@ -54,7 +54,10 @@ public class CalculatorController {
         Calculator.primaryStage.setScene(new Scene(root, 320, 240));
         Calculator.primaryStage.show();
     }
-
+    @FXML
+    void clearText(ActionEvent event) {
+        inputNumber.clear();
+    }
     @FXML
     void closeWindow(ActionEvent event) {
         Calculator.primaryStage.close();
