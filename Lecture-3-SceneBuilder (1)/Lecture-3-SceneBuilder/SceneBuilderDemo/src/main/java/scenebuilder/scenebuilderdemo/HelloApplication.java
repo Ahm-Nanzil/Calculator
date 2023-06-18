@@ -1,4 +1,4 @@
-package com.example.calculator;
+package scenebuilder.scenebuilderdemo;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -7,17 +7,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Calculator extends Application {
-    public static Stage primaryStage;
-
+public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        primaryStage = stage;
-        FXMLLoader fxmlLoader = new FXMLLoader(Calculator.class.getResource("calculatorView.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        primaryStage.setTitle("Hello!");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.show();
     }
 
     public static void main(String[] args) {
