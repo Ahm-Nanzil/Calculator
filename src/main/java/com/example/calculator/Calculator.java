@@ -15,7 +15,7 @@ public class Calculator extends Application {
         primaryStage = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(Calculator.class.getResource("calculatorView.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        primaryStage.setTitle("Hello!");
+        primaryStage.setTitle("Base Conversion Calculator");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

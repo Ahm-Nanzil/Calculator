@@ -31,20 +31,53 @@ public class CalculatorController {
 
     @FXML
     void convertB(ActionEvent event) {
+        String binaryNumber = null;
+        try {
+             binaryNumber = Integer.toBinaryString(Integer.parseInt(inputNumber.getText()));
+             message.setText(binaryNumber);
+        }
+        catch (NumberFormatException e) {
+            try {
+                double doubleValue = Double.parseDouble((inputNumber.getText()));
+                message.setText("No Input Given");
+            } catch (NumberFormatException ex) {
+                message.setText("Not a Number!");
+            }
+        }
 
-        String binaryNumber = Integer.toBinaryString(Integer.parseInt(inputNumber.getText()));
-        message.setText(binaryNumber);
     }
     @FXML
     void convertH(ActionEvent event) {
-        String hexNumber = Integer.toHexString(Integer.parseInt(inputNumber.getText()));
-        message.setText(hexNumber);
+        String hexNumber = null;
+        try {
+            hexNumber = Integer.toHexString(Integer.parseInt(inputNumber.getText()));
+            message.setText(hexNumber);
+        }
+        catch (NumberFormatException e) {
+            try {
+                double doubleValue = Double.parseDouble((inputNumber.getText()));
+                message.setText("No Input Given");
+            } catch (NumberFormatException ex) {
+                message.setText("Not a Number!");
+            }
+        }
     }
 
     @FXML
     void convertO(ActionEvent event) {
-        String octalNumber = Integer.toOctalString(Integer.parseInt(inputNumber.getText()));
-        message.setText(octalNumber);
+        String octalNumber = null;
+        try {
+            octalNumber = Integer.toOctalString(Integer.parseInt(inputNumber.getText()));
+            message.setText(octalNumber);
+        }
+        catch (NumberFormatException e) {
+            try {
+                double doubleValue = Double.parseDouble((inputNumber.getText()));
+                message.setText("No Input Given");
+            } catch (NumberFormatException ex) {
+                message.setText("Not a Number!");
+            }
+        }
     }
 
 
@@ -57,6 +90,7 @@ public class CalculatorController {
     @FXML
     void clearText(ActionEvent event) {
         inputNumber.clear();
+        message.setText("No Input");
     }
     @FXML
     void closeWindow(ActionEvent event) {
